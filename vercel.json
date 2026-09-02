@@ -1,9 +1,4 @@
 {
-  "version": 2,
-  "containerfile": "Dockerfile",
-  "build": {
-    "env": {
-      "PHP_ENV": "production"
-    }
-  }
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "version": 2
 }

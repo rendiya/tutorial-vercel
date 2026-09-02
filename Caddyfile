@@ -1,0 +1,35 @@
+# Caddyfile - Konfigurasi FrankenPHP / Caddy
+# File ini mengatur routing request ke PHP
+
+{
+    # FrankenPHP mode
+    frankenphp
+    # Matikan admin API untuk production
+    admin off
+}
+
+# Server utama
+:80 {
+    # Root dokumen ke folder /app
+    root * /app
+
+    # Aktifkan PHP via FrankenPHP
+    php_server
+
+    # Encode gzip untuk performa
+    encode gzip
+
+    # Handle file statis (CSS, JS, gambar)
+    file_server
+
+    # Logging
+    log {
+        output stdout
+        format console
+    }
+
+    # Handle error
+    handle_errors {
+        respond "{http.error.status_code} {http.error.status_text}"
+    }
+}

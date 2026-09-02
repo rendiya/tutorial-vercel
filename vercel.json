@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "containerfile": "Dockerfile",
+  "build": {
+    "env": {
+      "PHP_ENV": "production"
+    }
+  }
+}

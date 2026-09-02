@@ -1,5 +1,6 @@
 # Caddyfile - Konfigurasi FrankenPHP / Caddy
 # File ini mengatur routing request ke PHP
+# Menggunakan $PORT dari Vercel (default: 80)
 
 {
     # FrankenPHP mode
@@ -8,8 +9,8 @@
     admin off
 }
 
-# Server utama
-:80 {
+# Server utama - gunakan $PORT yang diinject Vercel
+:{$PORT:80} {
     # Root dokumen ke folder /app
     root * /app
 
